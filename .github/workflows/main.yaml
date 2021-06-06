@@ -31,6 +31,11 @@ jobs:
       - name: "Checkout"
         uses: "actions/checkout@v2"
 
+      - name: "ECLint"
+        uses: snow-actions/eclint@v1.0.1
+        with:
+          args: "check --block_comment_start '/**' --block_comment '*' --block_comment_end '*/'"
+
       - name: "Setup PHP cache environment"
         id: "extcache"
         uses: "shivammathur/cache-extensions@v1"
